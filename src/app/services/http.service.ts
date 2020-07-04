@@ -43,13 +43,12 @@ export class HttpService {
       );
   }
 
-  // public getHero(id: number): Observable<Hero> {
-  //   const url = `${this.heroesUrl}/${id}`;
-  //   return this.http.get<Hero>(url).pipe(
-  //     tap(_ => this.log(`fetched hero id=${id}`)),
-  //     catchError(this.handleError)
-  //   );
-  // }
+  public getEmployee(id: number): Observable<any> {
+    const url = `http://dummy.restapiexample.com/api/v1/employee/${id}`;
+    return this.http.get(url).pipe(
+      catchError(this.handleError)
+    );
+  }
 
   public add(data): Observable<any> {
     return this.http.post<any>("http://dummy.restapiexample.com/api/v1/create", data).pipe(

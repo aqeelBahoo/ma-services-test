@@ -81,7 +81,7 @@
         <button mat-icon-button [matMenuTriggerFor]="menu">
           <mat-icon>more_vert</mat-icon>
         </button>
-        <mat-menu #menu="matMenu" >
+        <mat-menu #menu="matMenu">
           <button mat-menu-item (click)="delete(element)">
             <span>Delete</span>
           </button>
@@ -119,6 +119,10 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: displayedColumns"
+      (click)="getById(row.id)"
+    ></tr>
   </table>
 </div>

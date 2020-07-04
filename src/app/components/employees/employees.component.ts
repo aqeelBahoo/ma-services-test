@@ -86,6 +86,12 @@ export class EmployeesComponent {
     });
   }
 
+  public getById(id: number) {
+    this.httpService.getEmployee(id).subscribe((data) => {
+      console.log(data);
+    });
+  }
+
   public delete(row) {
     this.httpService.delete(row).subscribe(() => {
       this.getEmployees();
